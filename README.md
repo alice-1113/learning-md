@@ -23,7 +23,7 @@
 1. [ブロック](#ブロック)
 1. [条件分岐(else)](#条件分岐else)
 1. [条件分岐(else-if)](#条件分岐else-if)
-1. [論理演算し](#論理演算子)
+1. [論理演算子](#論理演算子)
 1. [条件分岐のネスト](#条件分岐のネスト)
 1. [反復処理(for)](#反復処理for)
 1. [インクリメント/デクリメント](#インクリメントデクリメント)
@@ -638,7 +638,7 @@ int main(void) {
 さて、`if`での条件分岐はできるようになりましたが、
 それ以外の時の処理をしたい場合はどうすればいいのでしょうか？
 
-`if`の後ろに`else`という文をつなぎます。
+`if`の後ろに`else`という文を追加します。
 `(if { ... }) else { ... }`と記述します。
 
 プログラム
@@ -690,6 +690,72 @@ Hello World!
 このように、`if`の条件に合うときは`if`のブロックが、そうでないときに`else`のブロックの処理を行ないます。
 
 ## 条件分岐(else-if)
+
+では、複数の条件があるときはどうすればいいでしょうか。
+
+`if`と`else`を組み合わせればいいのです。
+
+`if`と`else`の間に`else if`を追加します。
+
+`if (条件式) { ... } else if (条件式) { ... } else { ... }`のように記述します。
+
+プログラム
+```c
+#include <stdio.h>
+
+int main(void) {
+    int tempareture = -3;
+
+    if (tempareture >= 25) {
+        printf("It is warm today!\n");
+    } else if (tempareture <= 0) {
+        printf("It is cold today!\n");
+    } else {
+        printf("It is comfortable today!\n");
+    }
+
+    printf("Hello World!\n");
+}
+
+```
+
+実行結果
+```
+It is cold today!
+Hello World!
+```
+
+`else-if`は複数個あっても大丈夫です。
+
+ただし、複数の条件に合致していても、実行されるのはプログラムで一番上（最初）の処理だけになります。
+
+プログラム
+```c
+#include <stdio.h>
+
+int main(void) {
+    int age = 76;
+
+    if (age >= 18) {
+        printf("You are an adult\n!");
+    } else if (age >= 75) {
+        printf("You are an old!\n");
+    } else if (age < 18) {
+        printf("You are a child!\n");
+    } else if (age < 0) {
+        printf("You are not born yet\n");
+    } else {
+        printf("You are not human!\n");
+    }
+}
+```
+
+実行結果
+```
+You are an adult!
+```
+
+書く順番に気を付けましょう。
 
 ## 論理演算子
 
