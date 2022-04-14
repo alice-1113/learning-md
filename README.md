@@ -801,6 +801,21 @@ It is comfortable today!
 
 `if`や`else`の中にさらに`if`などをいれることができます。
 
+プログラム
+```c
+#include <stdio.h>
+
+int main(void) {
+    int hoge;
+
+    if () {
+        if () {
+
+        }
+    }
+}
+```
+
 
 
 ## 反復処理(for)
