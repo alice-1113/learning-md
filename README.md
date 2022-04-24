@@ -1011,8 +1011,108 @@ help!
 .
 ```
 
-
 ## 条件分岐(swicth)
+
+条件分岐として、`if`文の他に`switch`文があります。
+
+主に、分岐が複数(3つ以上)のときに使われます。
+
+```c
+switch (式) {
+    case 値1:
+        処理;
+        break;
+    case 値2:
+        処理;
+        break;
+    default:
+        処理;
+}
+```
+
+のように記述します。
+
+**式**が**値**と一致した場合、その処理を行い、どの値にも一致しなかった場合`default`の処理をします。
+
+また、各`case`ごとに`break`を記述しなければいけません。（記述しなくてもエラーにはなりませんが…）
+
+とりあえず、サンプルプログラムを見てみましょう。
+
+プログラム
+```c
+#include <stdio.h>
+
+int main(void) {
+    int month;
+    month = 2;
+
+    switch (month) {
+        case 1:
+            printf("1月\n");
+            break;
+        case 2:
+            printf("2月\n");
+            break;
+        case 3:
+            printf("3月\n");
+            break;
+        case 4:
+            printf("4月\n");
+            break;
+
+        ...  // 5~12は省略
+
+        default:
+            printf("入力された月はありません\n");
+    }
+}
+```
+
+実行結果
+```result:
+2月
+```
+
+`if`文では毎回条件式に`month==1`のように記述しないといけないので大変ですが、`switch`ではその必要はありません。
+
+ちなみに、`break`を省略した場合は以下のようになります。
+
+プログラム
+```c
+#include <stdio.h>
+
+int main(void) {
+    int month;
+    month = 2;
+
+    switch (month) {
+        case 1:
+            printf("1月\n");
+        case 2:
+            printf("2月\n");
+        case 3:
+            printf("3月\n");
+        case 4:
+            printf("4月\n");
+
+        ...  // 5~12は省略
+
+        default:
+            printf("入力された月はありません\n");
+    }
+}
+```
+
+実行結果
+```result:
+2月
+3月
+4月
+...
+入力された月はありません
+```
+
+このようになってしまうので、`break`のつけ忘れには注意しましょう。
 
 ## break
 
