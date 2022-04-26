@@ -1011,7 +1011,7 @@ help!
 .
 ```
 
-## 条件分岐(swicth)
+## 条件分岐(switch)
 
 条件分岐として、`if`文の他に`switch`文があります。
 
@@ -1116,7 +1116,44 @@ int main(void) {
 
 ## break
 
+さて、`switch`文に出てきた`break`はなんでしょうか。
+
+直訳すると、**壊す**ですね。
+
+反復処理や`switch`の処理を中断させたいときに`break`を使います。
+
+反復処理のときは`if`文と組み合わせることが多いです。
+
+プログラム
+```c
+#include <stido.h>
+
+int main(void) {
+
+    for (int i=0; i<10; i++) {
+        if (i == 3) {
+            break;
+        }
+        printf("i = %d\n", i);
+    }
+}
+```
+
+実行結果
+```result
+i = 0
+i = 1
+i = 2
+i = 3
+```
+
+`switch`文のときは[条件分岐(switch)](#条件分岐(switch))の通りです。
+
+また、`for`文だけではなく`while`文でも同様に使うことができる。
+
+
 ## continue
+
 
 ## 反復処理のネスト
 
