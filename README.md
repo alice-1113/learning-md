@@ -208,6 +208,10 @@ int main(void) {
 
 ※何かしらの事情がない限りは`float`よりも`double`を使うべきです。
 
+※`double`と`float`の具体的な値はイメージです。
+
+ここでは`float`よりも`double`のほうが表現できる桁数が多いことをイメージできればいいでしょう。
+
 ### 算術演算子
 
 変数を使って計算をすることができます。
@@ -313,6 +317,8 @@ Hello, World!
 
 `\n`には**改行**が割り当てられています。
 
+他にも`\t`などあります。（ここでは説明しないので、気になる人は各自調べてみてください）
+
 ### 変数の出力（数値型）
 
 変数を出力してみましょう。
@@ -359,7 +365,7 @@ int main(void) {
     double priceIncludingTax = rawPrice + rawPrice * (tax/100);
 
     printf("税抜き価格: %lf\n", rawPrice);
-    printf("消費税    : %lf\n", tax);
+    printf("消費税    : %lf%\n", tax);
     printf("税込み価格: %lf\n", priceIncludingTax);
 }
 ```
@@ -367,7 +373,7 @@ int main(void) {
 実行結果
 ```
 税抜き価格: 100.000000
-消費税    : 10.000000
+消費税    : 10.000000%
 税込み価格: 110.000000
 ```
 
@@ -392,7 +398,7 @@ int main(void) {
     double priceIncludingTax = rawPrice + rawPrice * (tax/100);
 
     printf("税抜き価格: %.2lf\n", rawPrice);
-    printf("消費税    : %3.0lf\n", tax);
+    printf("消費税    : %.0lf%\n", tax);
     printf("税込み価格: %.2lf\n", priceIncludingTax);
 }
 ```
@@ -400,7 +406,7 @@ int main(void) {
 実行結果
 ```
 税抜き価格: 100.00
-消費税    :  10
+消費税    : 10%
 税込み価格: 110.00
 ```
 
@@ -518,6 +524,8 @@ int main(void){
 指定子は、`%d`や`%lf`などを使います。
 
 変数名の前に`&`が必要なので、忘れないようにしましょう。
+※ 正確ではないです
+
 
 プログラム
 ```c
@@ -1304,4 +1312,3 @@ int main(void) {
 
 
 ## 参考資料
-
