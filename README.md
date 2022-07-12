@@ -1,3 +1,3 @@
-# C言語の資料
+# 講習会資料
 
 [cintro](cintro/README.md)
